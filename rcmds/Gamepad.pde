@@ -18,6 +18,14 @@ void setupGamepad(String device) {
     gamepadAvail=false;
     return;
   }
+  catch(NoClassDefFoundError f) {
+    gamepadAvail=false;
+    return;
+  }
+  catch(ExceptionInInitializerError g) {
+    gamepadAvail=false;
+    return;
+  }
 }
 PVector gamepadVect(String xa, String ya) {
   if (gamepadAvail) {

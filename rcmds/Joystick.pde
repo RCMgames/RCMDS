@@ -29,7 +29,7 @@ class Joystick {
     noStroke();
     fill(background);
     rect(xPos, yPos, size, size);
-    if (xa!=""&&ya!="") {
+    if (xa!=null&&ya!=null) {
       v=gamepadVect(xa, ya);//remove for Android mode
     }
     v=mousescreen.readPos(mouseID, v);//remove for Android mode
