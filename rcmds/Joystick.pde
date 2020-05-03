@@ -17,8 +17,8 @@ class Joystick {
     stick=_stick;
     xRange=_xRange;
     yRange=_yRange;
-    touchID=touchscreen.registerZone(xPos, yPos, size, size);
-    //mouseID=mousescreen.registerZone(xPos, yPos, size, size);
+    touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
+    mouseID=mousescreen.registerZone(xPos, yPos, size, size);//remove for Android mode
   }
   PVector run(PVector v) {
     v=vectMult(v, new PVector(1/xRange, 1/yRange));
@@ -26,7 +26,7 @@ class Joystick {
     fill(background);
     rect(xPos, yPos, size, size);
     v=touchscreen.readPos(touchID, v);
-    //v=mousescreen.readPos(mouseID, v);
+    v=mousescreen.readPos(mouseID, v);
     fill(stick);
     ellipse(xPos+size/2*v.x, yPos-size/2*v.y, stickSize*size, stickSize*size);
     v=vectMult(v, new PVector(xRange, yRange));
