@@ -30,10 +30,11 @@ class Joystick {
     fill(background);
     rect(xPos, yPos, size, size);
     if (xa!=null&&ya!=null) {
-      v=gamepadVect(xa, ya);//remove for Android mode
+      v=gamepadVect(xa, ya, v);//remove for Android mode
     }
     v=mousescreen.readPos(mouseID, v);//remove for Android mode
     //v=touchscreen.readPos(touchID, v);//remove for Java mode
+    v.set(constrain(v.x, -1, 1), constrain(v.y, -1, 1));
     fill(stick);
     ellipse(xPos+size/2*v.x, yPos-size/2*v.y, stickSize*size, stickSize*size);
     v=vectMult(v, new PVector(xRange, yRange));

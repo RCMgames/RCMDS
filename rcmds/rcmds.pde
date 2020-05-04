@@ -12,7 +12,7 @@ void setup() {
 }
 void draw() {
   background(0);
-  stick2.run(new PVector(0, -20));
-  stick1.run(new PVector(0, 0));
+  stick1.run(new PVector(0, -20));
+  stick2.run(new PVector(0, 0));
   mousePress=false;//remove for Android mode
 }

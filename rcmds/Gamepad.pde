@@ -27,16 +27,42 @@ void setupGamepad(String device) {
     return;
   }
 }
-PVector gamepadVect(String xa, String ya) {
+PVector gamepadVect(String xa, String ya, PVector v) {
   if (gamepadAvail) {
     try {
       return new PVector(gpad.getSlider(xa).getValue(), -gpad.getSlider(ya).getValue());
     }
     catch(NullPointerException n) {
       gamepadAvail=false;
-      return new PVector(0, 0);
+      return v;
     }
   } else {
-    return new PVector(0, 0);
+    return v;
+  }
+}
+float gamepadVal(String a, float v) {
+  if (gamepadAvail) {
+    try {
+      return gpad.getSlider(a).getValue();
+    }
+    catch(NullPointerException n) {
+      gamepadAvail=false;
+      return v;
+    }
+  } else {
+    return v;
+  }
+}
+boolean gamepadButton(String b, boolean v) {
+  if (gamepadAvail) {
+    try {
+      return gpad.getButton(b).pressed();
+    }
+    catch(NullPointerException n) {
+      gamepadAvail=false;
+      return v;
+    }
+  } else {
+    return v;
   }
 }
