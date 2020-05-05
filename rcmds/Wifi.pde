@@ -1,25 +1,34 @@
-// import UDP library
 import hypermedia.net.*;
 byte arrayToSend[]=new byte[255];
 byte wifiArrayCounter=0;
 int arrayRecvd[]=new int [255];
 UDP udp;  // define the UDP object
-void comms() {
-  wifiArrayCounter=0;
-  create();
-  byte[] tosend=new byte[wifiArrayCounter];
-  for (int i=0; i<wifiArrayCounter; i++) {
-    tosend[i]=arrayToSend[i];
+int wifiPort=25210;
+String wifiIP="10.0.0.19";
+long wifiReceivedMillis=0;
+long wifiSentMillis=0;
+void sendWifiData(boolean t) {
+  if ((t&&millis()-wifiSentMillis>3000)||!t) {
+    wifiSentMillis=millis();
+    wifiArrayCounter=0;
+    WifiDataToSend();
+    byte[] tosend=new byte[wifiArrayCounter];
+    for (int i=0; i<wifiArrayCounter; i++) {
+      tosend[i]=arrayToSend[i];
+    }
+    print("sent message");
+    udp.send(tosend, wifiIP, wifiPort);
   }
-  udp.send(tosend, "10.25.21.1", 2521);
 }
-
 void receive( byte[] data, String ip, int port ) {//wifi event handler
+  wifiReceivedMillis=millis();
   for (int i=0; i<data.length; i++) {
     arrayRecvd[i]=(256+data[i])%256;
+    print(arrayRecvd[i]);
   }
   wifiArrayCounter=0;
-  parse();
+  WifiDataToParse();
+  sendWifiData(false);
 }
 void addBoolean(boolean d) {
   if (d) {

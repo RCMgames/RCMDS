@@ -15,4 +15,9 @@ void draw() {
   stick1.run(new PVector(0, -20));
   stick2.run(new PVector(0, 0));
   mousePress=false;//remove for Android mode
+  sendWifiData(true);
+}
+void WifiDataToParse() {//read data here
+}
+void WifiDataToSend() {//send data here
 }
