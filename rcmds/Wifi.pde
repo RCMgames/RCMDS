@@ -4,7 +4,7 @@ byte wifiArrayCounter=0;
 int arrayRecvd[]=new int [255];
 UDP udp;
 int wifiPort=25210;
-String wifiIP="10.0.0.19";
+String wifiIP="73.37.49.126";
 long wifiReceivedMillis=0;
 long wifiSentMillis=0;
 void sendWifiData(boolean t) {
