@@ -1,3 +1,6 @@
+int wifiPort=25210;
+String wifiIP="73.37.49.126";
+///////////////////////////////
 Joystick stick1;
 Joystick stick2;
 boolean ledVal=false;
