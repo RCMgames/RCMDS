@@ -25,6 +25,5 @@ void WifiDataToParse() {//read data here
   parseIn();
 }
 void WifiDataToSend() {//send data here
-  println(ledVal);
   addBoolean(ledVal);
 }
