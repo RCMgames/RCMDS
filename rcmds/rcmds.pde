@@ -18,6 +18,8 @@ void draw() {
   sendWifiData(true);
 }
 void WifiDataToParse() {//read data here
+  println(parseIn());
 }
 void WifiDataToSend() {//send data here
+  addInt(frameCount);
 }

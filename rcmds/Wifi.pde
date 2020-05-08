@@ -2,7 +2,7 @@ import hypermedia.net.*;
 byte arrayToSend[]=new byte[255];
 byte wifiArrayCounter=0;
 int arrayRecvd[]=new int [255];
-UDP udp;  // define the UDP object
+UDP udp;
 int wifiPort=25210;
 String wifiIP="10.0.0.19";
 long wifiReceivedMillis=0;
@@ -16,7 +16,6 @@ void sendWifiData(boolean t) {
     for (int i=0; i<wifiArrayCounter; i++) {
       tosend[i]=arrayToSend[i];
     }
-    print("sent message");
     udp.send(tosend, wifiIP, wifiPort);
   }
 }
@@ -24,7 +23,6 @@ void receive( byte[] data, String ip, int port ) {//wifi event handler
   wifiReceivedMillis=millis();
   for (int i=0; i<data.length; i++) {
     arrayRecvd[i]=(256+data[i])%256;
-    print(arrayRecvd[i]);
   }
   wifiArrayCounter=0;
   WifiDataToParse();
