@@ -1,5 +1,6 @@
 Joystick stick1;
 Joystick stick2;
+boolean ledVal=false;
 void setup() {
   //fullScreen();//remove for Java mode
   size(2000, 800);//remove for Android mode
@@ -12,14 +13,15 @@ void setup() {
 }
 void draw() {
   background(0);
-  stick1.run(new PVector(0, -20));
+  ledVal=stick1.run(new PVector(0, -20)).x!=0;
   stick2.run(new PVector(0, 0));
   mousePress=false;//remove for Android mode
   sendWifiData(true);
 }
 void WifiDataToParse() {//read data here
-  println(parseIn());
+  parseIn();
 }
 void WifiDataToSend() {//send data here
-  addInt(frameCount);
+  println(ledVal);
+  addBoolean(ledVal);
 }
