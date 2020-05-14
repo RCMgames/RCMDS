@@ -33,7 +33,7 @@ class Button {
     lastVal=val;
     pressed=(
       mousescreen.readPressed(mouseID)//remove for Android mode
-      //||touchscreen.readPressed(touchID)//remove for Java mode
+      //touchscreen.readPressed(touchID)//remove for Java mode
       );
     pressed=gamepadButton(gpButton, pressed);//remove for Android mode
 

@@ -9,7 +9,7 @@ Button b3;
 boolean ledVal=false;
 void setup() {
   //fullScreen();//remove for Java mode
-  size(2000, 800);//remove for Android mode
+  size(1920, 1080);//remove for Android mode
   rcmdsSetup();
   setupGamepad("Feather 32u4");//name of gamepad device
   //touchscreen=new Touchscreen();//remove for Java mode
