@@ -23,7 +23,7 @@ void setup() {
 }
 void draw() {
   background(0);
-  ledVal=stick1.run(new PVector(0, -20)).x!=0;
+  ledVal=stick1.run(new PVector(0, -20)).y>=0;
   stick2.run(new PVector(0, 0));
   b1.run();
   b2.run();
