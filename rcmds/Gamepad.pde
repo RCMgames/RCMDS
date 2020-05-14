@@ -28,7 +28,7 @@ void setupGamepad(String device) {
   }
 }
 PVector gamepadVect(String xa, String ya, PVector v) {
-  if (gamepadAvail) {
+  if (gamepadAvail&&xa!=null&&ya!=null) {
     try {
       return new PVector(gpad.getSlider(xa).getValue(), -gpad.getSlider(ya).getValue());
     }
@@ -41,7 +41,7 @@ PVector gamepadVect(String xa, String ya, PVector v) {
   }
 }
 float gamepadVal(String a, float v) {
-  if (gamepadAvail) {
+  if (gamepadAvail&&a!=null) {
     try {
       return gpad.getSlider(a).getValue();
     }
@@ -54,7 +54,7 @@ float gamepadVal(String a, float v) {
   }
 }
 boolean gamepadButton(String b, boolean v) {
-  if (gamepadAvail) {
+  if (gamepadAvail&&b!=null) {
     try {
       return gpad.getButton(b).pressed();
     }
