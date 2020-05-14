@@ -11,7 +11,7 @@ void setup() {
   //fullScreen();//remove for Java mode
   size(1920, 1080);//remove for Android mode
   rcmdsSetup();
-  setupGamepad("Feather 32u4");//name of gamepad device
+  setupGamepad("Feather 32u4");//name of gamepad device, remove for Android mode
   //touchscreen=new Touchscreen();//remove for Java mode
   mousescreen=new Mousescreen();//remove for Android mode
   stick1=new Joystick(1500, 500, 500, 10, 20, color(255, 0, 0), color(255), "X Axis", "Y Axis");
