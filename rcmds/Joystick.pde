@@ -10,8 +10,12 @@ class Joystick {
   int mouseID;
   String xa;
   String ya;
+  int upKey;
+  int downKey;
+  int leftKey;
+  int rightKey;
   final float stickSize=.25;
-  Joystick(float _xPos, float _yPos, float _size, float _xRange, float _yRange, color _background, color _stick, String _xa, String _ya) {
+  Joystick(float _xPos, float _yPos, float _size, float _xRange, float _yRange, color _background, color _stick, String _xa, String _ya, int _upKey, int _leftKey, int _downKey, int _rightKey) {
     xPos=_xPos;
     yPos=_yPos;
     size=_size;
@@ -21,6 +25,10 @@ class Joystick {
     yRange=_yRange;
     xa=_xa;
     ya=_ya;
+    upKey=_upKey;
+    downKey=_downKey;
+    leftKey=_leftKey;
+    rightKey=_rightKey;
     //touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
     mouseID=mousescreen.registerZone(xPos, yPos, size, size);//remove for Android mode
   }
@@ -30,6 +38,7 @@ class Joystick {
     fill(background);
     rect(xPos, yPos, size, size);
     v=gamepadVect(xa, ya, v);//remove for Android mode
+    v=keyboardCtrl.joystick(v, upKey, downKey, leftKey, rightKey);
     v=mousescreen.readPos(mouseID, v);//remove for Android mode
     //v=touchscreen.readPos(touchID, v);//remove for Java mode
     v.set(constrain(v.x, -1, 1), constrain(v.y, -1, 1));

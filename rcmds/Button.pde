@@ -12,8 +12,8 @@ class Button {
   boolean val;
   boolean pressed;
   boolean wasPressed;
-  final float stickSize=.25;
-  Button(float _xPos, float _yPos, float _size, color _background, color _forground, String _gpButton, boolean _momentary, boolean _val) {
+  int keyboard;
+  Button(float _xPos, float _yPos, float _size, color _background, color _forground, String _gpButton,int _keyboard, boolean _momentary, boolean _val) {
     xPos=_xPos;
     yPos=_yPos;
     size=_size;
@@ -23,6 +23,7 @@ class Button {
     momentary=_momentary;
     val=_val;
     lastVal=val;
+    keyboard=_keyboard;
     pressed=false;
     wasPressed=false;
     //touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
@@ -34,6 +35,7 @@ class Button {
     pressed=(
       mousescreen.readPressed(mouseID)//remove for Android mode
       //touchscreen.readPressed(touchID)//remove for Java mode
+      ||keyboardCtrl.isPressed(keyboard)
       );
     pressed=gamepadButton(gpButton, pressed);//remove for Android mode
 
