@@ -6,7 +6,9 @@ Joystick stick2;
 Button b1;
 Button b2;
 Button b3;
-boolean ledVal=false;
+
+float batVolt=0.0;
+boolean enabled=false;
 void setup() {
   //fullScreen();//remove for Java mode
   size(1920, 1080);//remove for Android mode
@@ -25,17 +27,23 @@ void setup() {
 }
 void draw() {
   background(0);
-  ledVal=stick1.run(new PVector(0, -20)).y>=0;
+  stick1.run(new PVector(0, -20));
   stick2.run(new PVector(0, 0));
   b1.run();
   b2.run();
   b3.run();
+  String[] msg={"battery voltage"};
+  String[] data={str(batVolt)};
+  dispTelem(msg, data, width/8, height/9, width/4, height*1/5, 20);
+
   mousePress=false;//remove for Android mode
   sendWifiData(true);
 }
-void WifiDataToParse() {//read data here
-  parseIn();
+void WifiDataToParse() {
+  batVolt=parseFl();
+  //add data to read here
 }
-void WifiDataToSend() {//send data here
-  addBoolean(ledVal);
+void WifiDataToSend() {
+  addBoolean(enabled);
+  //add data to send here
 }
