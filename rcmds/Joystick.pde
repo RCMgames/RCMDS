@@ -1,3 +1,5 @@
+int TILT_X=1;
+int TILT_Y=2;
 class Joystick {
   color background;
   color stick;
@@ -14,8 +16,10 @@ class Joystick {
   int downKey;
   int leftKey;
   int rightKey;
+  int xTilt;
+  int yTilt;
   final float stickSize=.25;
-  Joystick(float _xPos, float _yPos, float _size, float _xRange, float _yRange, color _background, color _stick, String _xa, String _ya, int _upKey, int _leftKey, int _downKey, int _rightKey) {
+  Joystick(float _xPos, float _yPos, float _size, float _xRange, float _yRange, color _background, color _stick, String _xa, String _ya, int _upKey, int _leftKey, int _downKey, int _rightKey, int _xTilt, int _yTilt) {
     xPos=_xPos;
     yPos=_yPos;
     size=_size;
@@ -29,6 +33,8 @@ class Joystick {
     downKey=_downKey;
     leftKey=_leftKey;
     rightKey=_rightKey;
+    xTilt=_xTilt;
+    yTilt=_yTilt;
     //touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
     mouseID=mousescreen.registerZone(xPos, yPos, size, size);//remove for Android mode
   }
@@ -37,8 +43,20 @@ class Joystick {
     noStroke();
     fill(background);
     rect(xPos, yPos, size, size);
+    /*if (xTilt==TILT_X) {
+      v.set(readTip(v).x, v.y);
+    }
+    if (yTilt==TILT_Y) {
+      v.set(v.x, readTip(v).y);
+    }
+    if (xTilt==TILT_Y) {
+      v.set(readTip(v).y, v.y);
+    }
+    if (yTilt==TILT_X) {
+      v.set(v.x, readTip(v).x);
+    }*/ //remove for Java mode
     v=gamepadVect(xa, ya, v);//remove for Android mode
-    v=keyboardCtrl.joystick(v, upKey, downKey, leftKey, rightKey);
+    v=keyboardCtrl.joystick(v, upKey, downKey, leftKey, rightKey);//remove for Android mode
     v=mousescreen.readPos(mouseID, v);//remove for Android mode
     //v=touchscreen.readPos(touchID, v);//remove for Java mode
     v.set(constrain(v.x, -1, 1), constrain(v.y, -1, 1));

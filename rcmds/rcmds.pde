@@ -15,8 +15,10 @@ void setup() {
   //touchscreen=new Touchscreen();//remove for Java mode
   mousescreen=new Mousescreen();//remove for Android mode
   keyboardCtrl=new KeyboardCtrl();//remove for Android mode
-  stick1=new Joystick(1500, 500, 500, 10, 20, color(255, 0, 0), color(255), "X Axis", "Y Axis", 'w', 'a', 's', 'd');
-  stick2=new Joystick(500, 500, 500, 10, 20, color(0, 255, 0), color(255, 0, 255), null, null, UP, LEFT, DOWN, RIGHT);
+  //setupAccelerometer();//remove for Java mode
+  //setup UI
+  stick1=new Joystick(1500, 500, 500, 10, 20, color(255, 0, 0), color(255), "X Axis", "Y Axis", 'w', 'a', 's', 'd', 0, TILT_Y);
+  stick2=new Joystick(500, 500, 500, 10, 20, color(0, 255, 0), color(255, 0, 255), null, null, UP, 0, DOWN, 0, TILT_Y, TILT_X);
   b1=new Button(1000, 100, 100, color(100), color(0, 200, 0), "Button 1", ' ', true, false);
   b2=new Button(1000, 300, 100, color(100), color(0, 200, 0), "Button 2", SHIFT, false, true);
   b3=new Button(1000, 500, 100, color(100), color(0, 200, 0), "Button 3", 0, false, false);

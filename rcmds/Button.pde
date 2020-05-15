@@ -35,7 +35,7 @@ class Button {
     pressed=(
       mousescreen.readPressed(mouseID)//remove for Android mode
       //touchscreen.readPressed(touchID)//remove for Java mode
-      ||keyboardCtrl.isPressed(keyboard)
+      ||keyboardCtrl.isPressed(keyboard)//remove for Android mode
       );
     pressed=gamepadButton(gpButton, pressed);//remove for Android mode
 
