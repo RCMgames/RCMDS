@@ -1,3 +1,4 @@
+//remove for Android mode
 KeyboardCtrl keyboardCtrl;
 import java.util.HashSet;
 class KeyboardCtrl {
