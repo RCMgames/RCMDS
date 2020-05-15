@@ -21,28 +21,30 @@ class TypeBox {
     e=false;
     le=false;
     col=_col;
-    //touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
+    //touchID=touchscreen.registerZone(x, y, w, h);//remove for Java mode
     mouseID=mousescreen.registerZone(x, y, w, h);//remove for Android mode
   }
   void doCommon(int numMode) {
     le=e;
-    if (keyPressed) {
-      if (key==ENTER) {
-        e=false;
-        typeBoxActive=false;
-      }
-      if (key==DELETE) {
-        e=false;
-        entry="";
-        typeBoxActive=false;
-      }
-    }
     if (
       mousescreen.readPressed(mouseID)//remove for Android mode
       //touchscreen.readPressed(touchID)//remove for Java mode
       &&!typeBoxActive) {
       e=true;
       typeBoxActive=true;
+    }
+    if (keyPressTypeBox&&e) {
+      if (key==ENTER||key==RETURN||keyCode==66) {
+        e=false;
+        typeBoxActive=false;
+        keyPressTypeBox=false;
+      }
+      if (key==DELETE) {
+        e=false;
+        entry="";
+        typeBoxActive=false;
+        keyPressTypeBox=false;
+      }
     }
     if (e&&!le) {//just activated
       entry="";
@@ -66,7 +68,7 @@ class TypeBox {
           entry+=key;//numbers, negative, and decimal
         }
       }
-      if (keyPressTypeBox&key==BACKSPACE&&entry.length()>0) {        
+      if (keyPressTypeBox&&(key==BACKSPACE||keyCode==67)&&entry.length()>0) {        
         keyPressTypeBox=false;
         entry=entry.substring(0, entry.length()-1);
       }

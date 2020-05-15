@@ -50,10 +50,8 @@ class KeyboardCtrl {
 }
 void keyPressed() {
   keyPressTypeBox=true;
-  if (!typeBoxActive)
-    keyboardCtrl.keypress();
+  if (!typeBoxActive) keyboardCtrl.keypress(); //remove for Android mode
 }
 void keyReleased() {
-  if (!typeBoxActive)
-    keyboardCtrl.keyrelease();
+  if (!typeBoxActive) keyboardCtrl.keyrelease(); //remove for Android mode
 }

@@ -15,7 +15,7 @@ void setup() {
   mousescreen=new Mousescreen();//remove for Android mode
   keyboardCtrl=new KeyboardCtrl();//remove for Android mode
   //setupAccelerometer();//remove for Java mode
-  setupWifiSettingsChanger(width/2,0);
+  setupWifiSettingsChanger(width/2, 0);
   //setup UI here
   stick1=new Joystick(1600, 600, 500, 255, 255, color(255, 0, 0), color(255), "X Axis", "Y Axis", 'w', 'a', 's', 'd', 0, TILT_Y);
   b1=new Button(100, 300, 100, color(100), color(0, 200, 0), "Button 1", ' ', false, false);
@@ -27,8 +27,8 @@ void draw() {
   //add UI here
   stick1.run(new PVector(0, 0));
   b1.run();
-  String[] msg={"battery voltage","ping"};
-  String[] data={str(batVolt),str(wifiPing)};
+  String[] msg={"battery voltage", "ping"};
+  String[] data={str(batVolt), str(wifiPing)};
   dispTelem(msg, data, width/2, height*2/3, width/4, height*2/3, 20);
   mousePress=false;//remove for Android mode
   sendWifiData(true);

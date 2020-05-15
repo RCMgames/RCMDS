@@ -43,18 +43,18 @@ class Joystick {
     noStroke();
     fill(background);
     rect(xPos, yPos, size, size);
-    /*if (xTilt==TILT_X) {
-      v.set(readTip(v).x, v.y);
-    }
-    if (yTilt==TILT_Y) {
-      v.set(v.x, readTip(v).y);
-    }
-    if (xTilt==TILT_Y) {
-      v.set(readTip(v).y, v.y);
-    }
-    if (yTilt==TILT_X) {
-      v.set(v.x, readTip(v).x);
-    }*/ //remove for Java mode
+    //if (xTilt==TILT_X) {
+    //  v.set(readTip(v).x, v.y);
+    //}
+    //if (yTilt==TILT_Y) {
+    //  v.set(v.x, readTip(v).y);
+    //}
+    //if (xTilt==TILT_Y) {
+    //  v.set(readTip(v).y, v.y);
+    //}
+    //if (yTilt==TILT_X) {
+    //  v.set(v.x, readTip(v).x);
+    //} //remove for Java mode (12 lines)
     v=gamepadVect(xa, ya, v);//remove for Android mode
     v=keyboardCtrl.joystick(v, upKey, downKey, leftKey, rightKey);//remove for Android mode
     v=mousescreen.readPos(mouseID, v);//remove for Android mode
