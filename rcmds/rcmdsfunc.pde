@@ -6,3 +6,6 @@ void rcmdsSetup() {
   udp = new UDP(this);
   udp.listen(true);
 }
+boolean runEnableSwitch(boolean en){
+ return en; 
+}
