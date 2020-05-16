@@ -49,8 +49,8 @@ class KeyboardCtrl {
   }
 }
 void keyPressed() {
-  keyPressTypeBox=true;
   if (!typeBoxActive) keyboardCtrl.keypress(); //remove for Android mode
+  else keyPressTypeBox=true;
 }
 void keyReleased() {
   if (!typeBoxActive) keyboardCtrl.keyrelease(); //remove for Android mode

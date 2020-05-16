@@ -1,4 +1,6 @@
 EnableSwitch enableSwitch;
+int TILT_X=1;
+int TILT_Y=2;
 void rcmdsSetup() {
   orientation(LANDSCAPE);
   shapeMode(CENTER);

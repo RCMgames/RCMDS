@@ -1,5 +1,3 @@
-int TILT_X=1;
-int TILT_Y=2;
 class Joystick {
   color background;
   color stick;
