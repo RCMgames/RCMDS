@@ -1,7 +1,7 @@
-KeyboardCtrl keyboardCtrl;
-import java.util.HashSet;
+KeyboardCtrl keyboardCtrl; //remove for Android mode
+import java.util.HashSet; //remove for Android mode
 boolean keyPressTypeBox=false;
-class KeyboardCtrl { //remove class for Android Mode
+class KeyboardCtrl { //remove class for Android mode
   HashSet<Integer> keys;
   KeyboardCtrl() {
     keys=new HashSet<Integer>();
