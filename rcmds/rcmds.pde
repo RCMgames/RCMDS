@@ -10,6 +10,7 @@ void setup() {
   size(1920, 1080);//remove for Android mode
   rcmdsSetup();
   //setup UI here
+  
 }
 void draw() {
   background(0);
