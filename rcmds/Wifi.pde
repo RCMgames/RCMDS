@@ -1,4 +1,6 @@
 import hypermedia.net.*;
+int wifiPort=25210;
+String wifiIP="10.25.21.1";
 byte arrayToSend[]=new byte[255];
 byte wifiArrayCounter=0;
 int arrayRecvd[]=new int [255];
@@ -25,10 +27,10 @@ void receive( byte[] data, String ip, int port ) {//wifi event handler
     arrayRecvd[i]=(256+data[i])%256;
   }
   wifiArrayCounter=0;
-  WifiDataToParse();
+  WifiDataToRecv();
   sendWifiData(false);
 }
-void addBoolean(boolean d) {
+void sendBl(boolean d) {
   if (d) {
     arrayToSend[wifiArrayCounter]=1;
   } else {
@@ -36,11 +38,11 @@ void addBoolean(boolean d) {
   }
   wifiArrayCounter++;
 }
-void addByte(byte d) {
+void sendBy(byte d) {
   arrayToSend[wifiArrayCounter]=d;
   wifiArrayCounter++;
 }
-void addInt(int d) {
+void sendIn(int d) {
   arrayToSend[wifiArrayCounter] = byte((d & 0xFF));
   wifiArrayCounter++;
   arrayToSend[wifiArrayCounter] = byte(((d >>> 8) & 0xFF));  
@@ -50,7 +52,7 @@ void addInt(int d) {
   arrayToSend[wifiArrayCounter] = byte(((d >>> 24) & 0xFF));  
   wifiArrayCounter++;
 }
-void addFloat(float d) {
+void sendFl(float d) {
   int bits = Float.floatToIntBits(d);
   arrayToSend[wifiArrayCounter] = (byte)(bits & 0xFF);  
   wifiArrayCounter++;
@@ -61,19 +63,19 @@ void addFloat(float d) {
   arrayToSend[wifiArrayCounter] = (byte)((bits >>> 24) & 0xFF);
   wifiArrayCounter++;
 }
-boolean parseBl() {
+boolean recvBl() {
   boolean d;
   d=arrayRecvd[wifiArrayCounter]==1;
   wifiArrayCounter++;
   return d;
 }
-int parseBy() {
+int recvBy() {
   int d;
   d=int(arrayRecvd[wifiArrayCounter]);
   wifiArrayCounter++;
   return d;
 }
-int parseIn() {
+int recvIn() {
   int d = (arrayRecvd[wifiArrayCounter+3]<<24)+(arrayRecvd[wifiArrayCounter+2]<<16)+(arrayRecvd[wifiArrayCounter+1]<<8)+arrayRecvd[wifiArrayCounter];
   wifiArrayCounter++;
   wifiArrayCounter++;
@@ -81,7 +83,7 @@ int parseIn() {
   wifiArrayCounter++;
   return d;
 }
-float parseFl() {
+float recvFl() {
   String hexint=hex(byte(arrayRecvd[wifiArrayCounter+3]))+hex(byte(arrayRecvd[wifiArrayCounter+2]))+hex(byte(arrayRecvd[wifiArrayCounter+1]))+hex(byte(arrayRecvd[wifiArrayCounter]));
   float d = Float.intBitsToFloat(unhex(hexint)); 
   wifiArrayCounter++;
