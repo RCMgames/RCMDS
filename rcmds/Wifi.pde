@@ -63,6 +63,10 @@ void sendFl(float d) {
   arrayToSend[wifiArrayCounter] = (byte)((bits >>> 24) & 0xFF);
   wifiArrayCounter++;
 }
+void sendVect(PVector v) {
+  sendFl(v.x);
+  sendFl(v.y);
+}
 boolean recvBl() {
   boolean d;
   d=arrayRecvd[wifiArrayCounter]==1;
@@ -91,4 +95,7 @@ float recvFl() {
   wifiArrayCounter++;
   wifiArrayCounter++;
   return d;
+}
+PVector recvVect() {
+  return new PVector(recvFl(), recvFl());
 }
