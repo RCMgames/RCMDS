@@ -6,11 +6,10 @@ boolean enabled=false;
 ////////////////////////add variables here
 
 void setup() {
-  //fullScreen();//remove for Java mode
-  size(1920, 1080);//remove for Android mode
+  fullScreen();//remove for Java mode
+  //size(1920, 1080);//remove for Android mode
   rcmdsSetup();
   //setup UI here
-  
 }
 void draw() {
   background(0);
@@ -27,10 +26,8 @@ void draw() {
 void WifiDataToRecv() {
   batVolt=recvFl();
   ////////////////////////////////////add data to read here
-  
 }
 void WifiDataToSend() {
   sendBl(enabled);
   ///////////////////////////////////add data to send here
-  
 }

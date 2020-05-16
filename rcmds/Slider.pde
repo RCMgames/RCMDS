@@ -29,8 +29,8 @@ class Slider {
     inc=_inc;
     horizontal=_horizontal;
     reverse=_reverse;
-    //pointerID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
-    pointerID=mousescreen.registerZone(xPos, yPos, boolAB(horizontal, s, w), boolAB(horizontal, w, s));//remove for Android mode
+    pointerID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
+    //pointerID=mousescreen.registerZone(xPos, yPos, boolAB(horizontal, s, w), boolAB(horizontal, w, s));//remove for Android mode
   }
   float run(float v) {
     if (reverse) {
@@ -40,18 +40,18 @@ class Slider {
     noStroke();
     fill(background);
     rect(xPos, yPos, boolAB(horizontal, s, w), boolAB(horizontal, w, s));
-    //if (tilt==TILT_Y) {
-    //  v=readTip(v).y;
-    //}
-    //if (tilt==TILT_X) {
-    //  v=readTip(v).x;
-    //} //remove for Java mode (6 lines)
-    v=gamepadVal(ga, v);//remove for Android mode
-    v+=inc*keyboardCtrl.slider(0, pKey, mKey);//remove for Android mode
-    if (horizontal)v=mousescreen.readPos(pointerID, new PVector(v, 0)).x;//remove for Android mode
-    else v=mousescreen.readPos(pointerID, new PVector(0, v)).y;//remove for Android mode
-    //if (horizontal)v=touchscreen.readPos(pointerID, new PVector(v, 0)).x;//remove for Java mode
-    //else v=touchscreen.readPos(pointerID, new PVector(0, v)).y;//remove for Java mode
+    if (tilt==TILT_Y) {
+      v=readTip(v).y;
+    }
+    if (tilt==TILT_X) {
+      v=readTip(v).x;
+    } //remove for Java mode (6 lines)
+    //v=gamepadVal(ga, v);//remove for Android mode
+    //v+=inc*keyboardCtrl.slider(0, pKey, mKey);//remove for Android mode
+    //if (horizontal)v=mousescreen.readPos(pointerID, new PVector(v, 0)).x;//remove for Android mode
+    //else v=mousescreen.readPos(pointerID, new PVector(0, v)).y;//remove for Android mode
+    if (horizontal)v=touchscreen.readPos(pointerID, new PVector(v, 0)).x;//remove for Java mode
+    else v=touchscreen.readPos(pointerID, new PVector(0, v)).y;//remove for Java mode
     v=constrain(v, -1, 1);
     fill(stick);
     ellipse(xPos+boolAB(horizontal, s/2*v, 0), yPos-boolAB(horizontal, 0, s/2*v), w, w);

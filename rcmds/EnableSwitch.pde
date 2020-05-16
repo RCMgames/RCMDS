@@ -12,20 +12,20 @@ class EnableSwitch {
     y=_y;
     w=_w;
     h=_h;
-    //pointerID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
-    pointerID=mousescreen.registerZone(x, y, w, h);//remove for Android mode
+    pointerID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
+    //pointerID=mousescreen.registerZone(x, y, w, h);//remove for Android mode
     sliderPos=1;
   }
   boolean run(boolean enabled) {
     stroke(255);
     noFill();
     rect(x, y, w, h);
-    float swipePos=mousescreen.readPos(pointerID, new PVector(1, 0)).x;//remove for Android mode
-    //float swipePos=touchscreen.readPos(pointerID, new PVector(1, 0)).x;//remove for Java mode
+    //float swipePos=mousescreen.readPos(pointerID, new PVector(1, 0)).x;//remove for Android mode
+    float swipePos=touchscreen.readPos(pointerID, new PVector(1, 0)).x;//remove for Java mode
     swipePos=constrain(swipePos, -1, 1);
     if (enabled) {
-      boolean pressed=mousescreen.readPressed(pointerID);//remove for Android mode
-      //boolean pressed=touchscreen.readPressed(pointerID);//remove for Java mode
+      //boolean pressed=mousescreen.readPressed(pointerID);//remove for Android mode
+      boolean pressed=touchscreen.readPressed(pointerID);//remove for Java mode
       if (pressed&&!locked) {
         enabled=false;
         locked=true;
@@ -67,9 +67,6 @@ class EnableSwitch {
         enabled=true;
       }
     }
-
-
-
     return enabled;
   }
 }

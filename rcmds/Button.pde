@@ -28,18 +28,18 @@ class Button {
     label=_label;
     pressed=false;
     wasPressed=false;
-    //touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
-    mouseID=mousescreen.registerZone(xPos, yPos, size, size);//remove for Android mode
+    touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
+    //mouseID=mousescreen.registerZone(xPos, yPos, size, size);//remove for Android mode
   }
   boolean run() {
     wasPressed=pressed;
     lastVal=val;
     pressed=(
-      mousescreen.readPressed(mouseID)//remove for Android mode
-      //touchscreen.readPressed(touchID)//remove for Java mode
-      ||keyboardCtrl.isPressed(keyboard)//remove for Android mode
+      //mousescreen.readPressed(mouseID)//remove for Android mode
+      touchscreen.readPressed(touchID)//remove for Java mode
+      //||keyboardCtrl.isPressed(keyboard)//remove for Android mode
       );
-    pressed=gamepadButton(gpButton, pressed);//remove for Android mode
+    //pressed=gamepadButton(gpButton, pressed);//remove for Android mode
 
     if (momentary) {
       val=pressed;

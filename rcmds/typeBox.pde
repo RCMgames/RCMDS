@@ -21,14 +21,14 @@ class TypeBox {
     e=false;
     le=false;
     col=_col;
-    //touchID=touchscreen.registerZone(x, y, w, h);//remove for Java mode
-    mouseID=mousescreen.registerZone(x, y, w, h);//remove for Android mode
+    touchID=touchscreen.registerZone(x, y, w, h);//remove for Java mode
+    //mouseID=mousescreen.registerZone(x, y, w, h);//remove for Android mode
   }
   void doCommon(int numMode) {
     le=e;
     if (
-      mousescreen.readPressed(mouseID)//remove for Android mode
-      //touchscreen.readPressed(touchID)//remove for Java mode
+      //mousescreen.readPressed(mouseID)//remove for Android mode
+      touchscreen.readPressed(touchID)//remove for Java mode
       &&!typeBoxActive) {
       e=true;
       typeBoxActive=true;
@@ -48,10 +48,10 @@ class TypeBox {
     }
     if (e&&!le) {//just activated
       entry="";
-      //KetaiKeyboard.show(rcmds.this);//remove for Java mode
+      KetaiKeyboard.show(rcmds.this);//remove for Java mode
     }
     if (!e&&le) {//edit finished
-      //KetaiKeyboard.hide(rcmds.this);//remove for Java mode
+      KetaiKeyboard.hide(rcmds.this);//remove for Java mode
     }
     textSize(h*.75);
     if (e) {
