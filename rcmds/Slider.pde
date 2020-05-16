@@ -29,7 +29,7 @@ class Slider {
     inc=_inc;
     horizontal=_horizontal;
     reverse=_reverse;
-    //pointerID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
+    //pointerID=touchscreen.registerZone(xPos, yPos, boolAB(horizontal, s, w), boolAB(horizontal, w, s));//remove for Java mode
     pointerID=mousescreen.registerZone(xPos, yPos, boolAB(horizontal, s, w), boolAB(horizontal, w, s));//remove for Android mode
   }
   float run(float v) {
@@ -41,10 +41,10 @@ class Slider {
     fill(background);
     rect(xPos, yPos, boolAB(horizontal, s, w), boolAB(horizontal, w, s));
     //if (tilt==TILT_Y) {
-    //  v=readTip(v).y;
+    //  v=readTip(new PVector(0,v)).y;
     //}
     //if (tilt==TILT_X) {
-    //  v=readTip(v).x;
+    //  v=readTip(new PVector(v,0)).x;
     //} //remove for Java mode (6 lines)
     v=gamepadVal(ga, v);//remove for Android mode
     v+=inc*keyboardCtrl.slider(0, pKey, mKey);//remove for Android mode
