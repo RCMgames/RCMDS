@@ -69,7 +69,10 @@ class Button {
   boolean justReleased() {
     return !pressed&&wasPressed;
   }
-  boolean unToggled() {
+  boolean toggledOff() {
     return lastVal&&!val;
+  }
+  boolean toggledOn() {
+    return !lastVal&&val;
   }
 }

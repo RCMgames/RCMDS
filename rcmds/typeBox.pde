@@ -53,8 +53,9 @@ class TypeBox {
     if (!e&&le) {//edit finished
       //KetaiKeyboard.hide(rcmds.this);//remove for Java mode
     }
+    textSize(h*.75);
     if (e) {
-      if (keyPressTypeBox&&textWidth(entry)<w-2-textWidth(label)) {
+      if (keyPressTypeBox&&textWidth(entry)<w-h*.75-textWidth(label)) {
         if (numMode==0&&(((key>=32&&key<=126)) && (key != CODED))) {        
           keyPressTypeBox=false;
           entry+=key; //letters and numbers
@@ -71,6 +72,9 @@ class TypeBox {
       if (keyPressTypeBox&&(key==BACKSPACE||keyCode==67)&&entry.length()>0) {        
         keyPressTypeBox=false;
         entry=entry.substring(0, entry.length()-1);
+        if (entry.length()==0) {
+          entry="";
+        }
       }
     }
     fill(0);
@@ -79,7 +83,6 @@ class TypeBox {
     rect(x, y, w, h);
     if (e)fill(255);
     else fill(col);
-    textSize(h*.75);
     text(label, x, y, w, h);
     if (e) {
       text(entry, x+textWidth(label)/2, y, w-textWidth(label), h);
