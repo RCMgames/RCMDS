@@ -1,7 +1,7 @@
-KeyboardCtrl keyboardCtrl;
-import java.util.HashSet;
+//KeyboardCtrl keyboardCtrl; //remove for Android mode
+//import java.util.HashSet; //remove for Android mode
 boolean keyPressTypeBox=false;
-//class KeyboardCtrl { //remove entire class for Android mode
+//class KeyboardCtrl { //remove class for Android mode
 //  HashSet<Integer> keys;
 //  KeyboardCtrl() {
 //    keys=new HashSet<Integer>();
@@ -49,11 +49,12 @@ boolean keyPressTypeBox=false;
 //  }
 //}
 void keyPressed() {
-  //if (!typeBoxActive) //remove for Android mode
-  //keyboardCtrl.keypress(); //remove for Android mode
+  //if (!typeBoxActive)  //remove for Android mode
+    //keyboardCtrl.keypress(); //remove for Android mode
   //else  //remove for Android mode
   keyPressTypeBox=true;
 }
 //void keyReleased() { //remove for Android mode
-//  if (!typeBoxActive) keyboardCtrl.keyrelease(); //remove for Android mode
+  //if (!typeBoxActive)  //remove for Android mode
+    //keyboardCtrl.keyrelease(); //remove for Android mode
 //} //remove for Android mode
