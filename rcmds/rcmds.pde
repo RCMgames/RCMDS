@@ -26,8 +26,10 @@ void draw() {
 void WifiDataToRecv() {
   batVolt=recvFl();
   ////////////////////////////////////add data to read here
+  
 }
 void WifiDataToSend() {
   sendBl(enabled);
   ///////////////////////////////////add data to send here
+  
 }
