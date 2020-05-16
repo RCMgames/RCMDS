@@ -67,9 +67,6 @@ class EnableSwitch {
         enabled=true;
       }
     }
-
-
-
     return enabled;
   }
 }
