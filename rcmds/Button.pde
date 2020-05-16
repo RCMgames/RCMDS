@@ -13,7 +13,8 @@ class Button {
   boolean pressed;
   boolean wasPressed;
   int keyboard;
-  Button(float _xPos, float _yPos, float _size, color _background, color _forground, String _gpButton,int _keyboard, boolean _momentary, boolean _val) {
+  String label;
+  Button(float _xPos, float _yPos, float _size, color _background, color _forground, String _gpButton, int _keyboard, boolean _momentary, boolean _val, String _label) {
     xPos=_xPos;
     yPos=_yPos;
     size=_size;
@@ -24,6 +25,7 @@ class Button {
     val=_val;
     lastVal=val;
     keyboard=_keyboard;
+    label=_label;
     pressed=false;
     wasPressed=false;
     //touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
@@ -53,6 +55,9 @@ class Button {
       fill(background);
     }
     rect(xPos, yPos, size, size);
+    fill(255);
+    textSize(size/4);
+    text(label, xPos, yPos, size, size);
     return val;
   }
   boolean justPressed() {

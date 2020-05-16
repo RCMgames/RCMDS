@@ -1,6 +1,6 @@
-//remove for Android mode
 KeyboardCtrl keyboardCtrl;
 import java.util.HashSet;
+boolean keyPressTypeBox=false;
 class KeyboardCtrl {
   HashSet<Integer> keys;
   KeyboardCtrl() {
@@ -49,8 +49,9 @@ class KeyboardCtrl {
   }
 }
 void keyPressed() {
-  keyboardCtrl.keypress();
+  keyPressTypeBox=true;
+  if (!typeBoxActive) keyboardCtrl.keypress(); //remove for Android mode
 }
 void keyReleased() {
-  keyboardCtrl.keyrelease();
+  if (!typeBoxActive) keyboardCtrl.keyrelease(); //remove for Android mode
 }
