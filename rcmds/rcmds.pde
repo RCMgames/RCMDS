@@ -4,7 +4,9 @@ Button b1;
 Slider s1;
 //////////////////////
 float batVolt=0.0;
-boolean enabled=false;///add variables here
+boolean enabled=false;
+////////////////////////add variables here
+
 void setup() {
   //fullScreen();//remove for Java mode
   size(1920, 1080);//remove for Android mode
