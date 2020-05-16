@@ -13,7 +13,7 @@ void setup() {
   rcmdsSetup();
   //setup UI here
   stick1=new Joystick(width*.8, height*.6, 500, 255, 255, color(255, 0, 0), color(255), "X Axis", "Y Axis", 'w', 'a', 's', 'd', TILT_X, TILT_Y);
-  b1=new Button(100, 500, 100, color(100), color(0, 200, 0), "Button 1", ' ', false, false, "b1");
+  b1=new Button(100, 500, 100, color(100), color(0, 200, 0), "Button 1", ' ', false, false, "");
   s1=new Slider(100, 700, 200, 50, 255, color(0, 0, 200), color(200), "Axis 5", 'u', 'j', 1, TILT_Y, false, true);
 }
 void draw() {
