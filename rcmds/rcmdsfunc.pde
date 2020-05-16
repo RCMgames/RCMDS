@@ -12,7 +12,7 @@ void rcmdsSetup() {
   setupWifiSettingsChanger(width/2, 0);
   udp = new UDP(this);
   udp.listen(true);
-  enableSwitch=new EnableSwitch(width/12, height/12, width/6, height/6);
+  enableSwitch=new EnableSwitch(width/12, height/18, width/6, height/9);
 }
 boolean runEnableSwitch(boolean en) {
   return enableSwitch.run(en);
