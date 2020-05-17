@@ -6,7 +6,6 @@ void rcmdsSetup() {
   shapeMode(CENTER);
   rectMode(CENTER);
   background(0);
-  setupGamepad("Feather 32u4");//name of gamepad device, remove for Android mode
   //touchscreen=new Touchscreen();//remove for Java mode
   mousescreen=new Mousescreen();//remove for Android mode
   keyboardCtrl=new KeyboardCtrl();//remove for Android mode
