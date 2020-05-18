@@ -8,9 +8,13 @@ UDP udp;
 long wifiReceivedMillis=0;
 long wifiSentMillis=0;
 long wifiPing=-1;
+static final int wifiRetryPingTime=3000; 
 void sendWifiData(boolean t) {
-  if ((t&&millis()-wifiSentMillis>3000)||!t) {
+  if ((t&&millis()-wifiSentMillis>wifiRetryPingTime)||!t) {
     wifiPing=millis()-wifiSentMillis;
+    if (wifiPing>wifiRetryPingTime) {
+      wifiPing=-1;
+    }
     wifiSentMillis=millis();
     wifiArrayCounter=0;
     WifiDataToSend();
