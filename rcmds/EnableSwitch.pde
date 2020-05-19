@@ -12,7 +12,7 @@ class EnableSwitch {
     y=_y;
     w=_w;
     h=_h;
-    //pointerID=touchscreen.registerZone(xPos, yPos, w, h);//remove for Java mode
+    //pointerID=touchscreen.registerZone(x, y, w, h);//remove for Java mode
     pointerID=mousescreen.registerZone(x, y, w, h);//remove for Android mode
     sliderPos=1;
   }
@@ -49,7 +49,7 @@ class EnableSwitch {
       textSize(h*.45);
       text("slide to", x, y, w, h);
       textSize(h*.85);
-      text("←", x+w*.5, y, w, h);
+      text("<-", x+w*.5, y, w, h);
       textSize(h*.45);
       text("enable", x, y+h/2, w, h);
       if (locked) {
