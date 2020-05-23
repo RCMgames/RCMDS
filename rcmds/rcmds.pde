@@ -6,10 +6,8 @@ boolean enabled=false;
 ////////////////////////add variables here
 
 void setup() {
-  fullScreen();//remove for Java mode
-  //size(1920, 1080);//remove for Android mode
+  fullScreen();
   rcmdsSetup();
-  //setupGamepad("Feather 32u4");//name of gamepad device, remove for Android mode
   //setup UI here
 }
 void draw() {

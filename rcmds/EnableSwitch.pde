@@ -12,17 +12,14 @@ class EnableSwitch {
     y=_y;
     w=_w;
     h=_h;
-    pointerID=touchscreen.registerZone(x, y, w, h);//remove for Java mode
-    //pointerID=mousescreen.registerZone(x, y, w, h);//remove for Android mode
+    pointerID=touchscreen.registerZone(x, y, w, h);
     sliderPos=1;
   }
   boolean run(boolean enabled) {
-    //float swipePos=mousescreen.readPos(pointerID, new PVector(1, 0)).x;//remove for Android mode
-    float swipePos=touchscreen.readPos(pointerID, new PVector(1, 0)).x;//remove for Java mode
+    float swipePos=touchscreen.readPos(pointerID, new PVector(1, 0)).x;
     swipePos=constrain(swipePos, -1, 1);
     if (enabled) {
-      //boolean pressed=mousescreen.readPressed(pointerID);//remove for Android mode
-      boolean pressed=touchscreen.readPressed(pointerID);//remove for Java mode
+      boolean pressed=touchscreen.readPressed(pointerID);
       if (pressed&&!locked) {
         enabled=false;
         locked=true;

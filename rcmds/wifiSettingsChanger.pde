@@ -18,13 +18,11 @@ void runWifiSettingsChanger() {
   loadWifiHotspotSettingsButton.run();
   if (saveWifiSettingsButton.justPressed()) {
     String[] settings={wifiIP, str(wifiPort)};
-    //saveStrings("data/wifiSettings.txt", settings);//remove for Android mode
-    saveStrings("wifiSettings.txt", settings);//remove for Java mode
+    saveStrings("wifiSettings.txt", settings);
   }
   if (recallWifiSettingsButton.justPressed()) {
     try {
-      //String[] settings=loadStrings("data/wifiSettings.txt");//remove for Android mode
-      String[] settings=loadStrings("wifiSettings.txt");//remove for Java mode
+      String[] settings=loadStrings("wifiSettings.txt");
       wifiIP=settings[0];
       wifiPort=int(settings[1]);
     }

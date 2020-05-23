@@ -1,4 +1,3 @@
-//comment out all for Java mode
 Touchscreen touchscreen;
 class Touchscreen {
   ArrayList<TouchZone> zones=new ArrayList<TouchZone>();

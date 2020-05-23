@@ -33,8 +33,7 @@ class Joystick {
     rightKey=_rightKey;
     xTilt=_xTilt;
     yTilt=_yTilt;
-    touchID=touchscreen.registerZone(xPos, yPos, size, size);//remove for Java mode
-    //mouseID=mousescreen.registerZone(xPos, yPos, size, size);//remove for Android mode
+    touchID=touchscreen.registerZone(xPos, yPos, size, size);
   }
   PVector run(PVector v) {
     v=vectMult(v, new PVector(1/xRange, 1/yRange));
@@ -52,11 +51,8 @@ class Joystick {
     }
     if (yTilt==TILT_X) {
       v.set(v.x, readTip(v).x);
-    } //remove for Java mode (12 lines)
-    //v=gamepadVect(xa, ya, v);//remove for Android mode
-    //v=keyboardCtrl.joystick(v, upKey, downKey, leftKey, rightKey);//remove for Android mode
-    //v=mousescreen.readPos(mouseID, v);//remove for Android mode
-    v=touchscreen.readPos(touchID, v);//remove for Java mode
+    }
+    v=touchscreen.readPos(touchID, v);
     v.set(constrain(v.x, -1, 1), constrain(v.y, -1, 1));
     fill(stick);
     ellipse(xPos+size/2*v.x, yPos-size/2*v.y, stickSize*size, stickSize*size);

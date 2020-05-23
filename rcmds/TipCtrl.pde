@@ -1,4 +1,3 @@
-//remove for Java mode
 import ketai.sensors.*;
 KetaiSensor sensor;
 boolean accelerometerAvail=false;
