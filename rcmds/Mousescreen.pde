@@ -1,4 +1,3 @@
-//comment out all for Android mode
 Mousescreen mousescreen;
 boolean mousePress=false;
 class Mousescreen {

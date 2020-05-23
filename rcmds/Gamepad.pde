@@ -1,4 +1,3 @@
-//comment out all for Android mode
 boolean gamepadAvail=false;
 import org.gamecontrolplus.*;
 import net.java.games.input.*;
@@ -8,7 +7,8 @@ void setupGamepad(String device) {
   gamepadAvail=true;
   try {
     control = ControlIO.getInstance(this);
-    gpad=control.getDevice(device);//your game controller
+    println(control.getDevices());
+    gpad=control.getDevice(device);
     if (gpad == null) {
       gamepadAvail=false;
       return;

@@ -6,10 +6,8 @@ void rcmdsSetup() {
   shapeMode(CENTER);
   rectMode(CENTER);
   background(0);
-  //touchscreen=new Touchscreen();//remove for Java mode
-  mousescreen=new Mousescreen();//remove for Android mode
-  keyboardCtrl=new KeyboardCtrl();//remove for Android mode
-  //setupAccelerometer();//remove for Java mode
+  mousescreen=new Mousescreen();
+  keyboardCtrl=new KeyboardCtrl();
   setupWifiSettingsChanger(width/2, 0);
   udp = new UDP(this);
   udp.listen(true);
