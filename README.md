@@ -5,7 +5,9 @@ Made with [Processing!](https://www.processing.org/reference)
 
 ## Branches and Robot types:
 There are Android versions for phones and Java versions
+
 Mode: just the foundation code
+
 Robot-A: two drive motors and a servo
 
 
