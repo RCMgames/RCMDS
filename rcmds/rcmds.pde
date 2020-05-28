@@ -15,6 +15,9 @@ void draw() {
   background(0);
   runWifiSettingsChanger();
   enabled=runEnableSwitch(enabled);
+  if (wifiPing==-1) {
+    enabled=false;
+  }
   /////////////////////////////////////add UI here
 
   String[] msg={"battery voltage", "ping"};
