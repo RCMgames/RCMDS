@@ -15,7 +15,7 @@ void draw() {
   background(0);
   runWifiSettingsChanger();
   enabled=runEnableSwitch(enabled);
-  if (wifiPing==-1) {
+  if (millis()-wifiSentMillis>wifiRetryPingTime*2) {
     enabled=false;
   }
   /////////////////////////////////////add UI here
