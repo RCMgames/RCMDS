@@ -8,7 +8,8 @@ There are Android versions for phones and Java versions
 
 Mode: just the foundation code
 
-Robot-A: two drive motors and a servo
+Robot-AB: compatible with robot-A (two motors and a servo) and robot-B (quad kiwi and two servos).
+
 
 
 ## UI element reference:
