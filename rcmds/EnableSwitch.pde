@@ -57,7 +57,6 @@ class EnableSwitch {
       } else {
         fill(155, 0, 0);
         rect(constrain(w/2*swipePos, -w/2+h/2, w/2-h/2)/2+w/4+x, y, w/2-constrain(w/2*swipePos, -w/2+h/2, w/2-h/2), h);
-        rectMode(CENTER);
         fill(255, 255, 0);
         rect(x+constrain(w/2*swipePos, -w/2+h/2, w/2-h/2), y, h, h);
       }
