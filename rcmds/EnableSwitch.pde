@@ -30,8 +30,10 @@ class EnableSwitch {
       fill(155, 0, 0);
       rect(x, y, w, h);
       fill(255);
-      textSize(h*.5);
-      text("Tap to DISABLE", x, y+h*.2, w, h);
+      textAlign(CENTER);
+      textSize(h*.45);
+      text("Tap to DISABLE ", x, y+h*.2, w, h);
+      textAlign(LEFT);
     } else { //disabled
       if (locked&&swipePos<1&&swipePos>1-2*h/w) {
         locked=false;
@@ -43,14 +45,14 @@ class EnableSwitch {
       fill(0, 100, 0);
       rect(x, y, w, h);
       fill(255);
-      textSize(h*.45);
-      text("slide to", x, y, w, h);
+      textSize(h*.4);
+      text(" slide to", x, y, w, h);
       textSize(h*.85);
       text("<-", x+w*.5, y, w, h);
-      textSize(h*.45);
-      text("enable", x, y+h/2, w, h);
+      textSize(h*.4);
+      text(" enable", x, y+h/2, w, h);
       if (locked) {
-        fill(0, 255, 0);      
+        fill(0, 255, 0);
         rect(x+w/2-h/2, y, h, h);
       } else {
         fill(155, 0, 0);
