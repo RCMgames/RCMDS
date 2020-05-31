@@ -14,9 +14,6 @@ void draw() {
   background(0);
   runWifiSettingsChanger();
   enabled=runEnableSwitch(enabled);
-  if (millis()-wifiReceivedMillis>wifiRetryPingTime*2) {
-    enabled=false;
-  }
   /////////////////////////////////////add UI here
 
   String[] msg={"battery voltage", "ping"};

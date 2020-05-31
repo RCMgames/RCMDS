@@ -65,6 +65,9 @@ class EnableSwitch {
         enabled=true;
       }
     }
+    if (millis()-wifiReceivedMillis>wifiRetryPingTime*2) {
+      enabled=false;
+    }
     return enabled;
   }
 }
