@@ -8,16 +8,12 @@ boolean enabled=false;
 void setup() {
   size(1920, 1080);
   rcmdsSetup();
-  setupGamepad("Controller (Xbox One For Windows)");
   //setup UI here
 }
 void draw() {
   background(0);
   runWifiSettingsChanger();
   enabled=runEnableSwitch(enabled);
-  if (millis()-wifiReceivedMillis>wifiRetryPingTime*2) {
-    enabled=false;
-  }
   /////////////////////////////////////add UI here
 
   String[] msg={"battery voltage", "ping"};
