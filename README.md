@@ -46,7 +46,7 @@ inVector: where the joystick should snap to if there is no input. new PVector(0,
 ### Slider
 A Slider is a one axis control.
 ```
-  Slider(xPos, yPos, size, width, range, background, stick, ga, pKey, mKey, inc, tilt, horizontal, reverse)
+  Slider(xPos, yPos, size, width, low, high, background, stick, ga, pKey, mKey, inc, tilt, horizontal, reverse)
 ```
 
 xPos,yPos: screen coordinates for the center of the slider (float)
@@ -55,7 +55,9 @@ size: how long the slider is (float)
 
 width: how wide the slider is (float)
 
-range: range of output values (float)
+low: low bound of output values (float)
+
+high: high bround of output values (float)
 
 background: color of slider background (color)
 
