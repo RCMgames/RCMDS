@@ -1,4 +1,4 @@
-static final boolean turningOffJoystick=false; //put turning on a separate slider instead of the joystick
+static final boolean turningOffJoystick=true; //put turning on a separate slider instead of the joystick
 /////////////////////////add interface elements here
 Joystick movStick;
 Slider turnSlider;
@@ -58,7 +58,7 @@ void WifiDataToSend() {
   ///////////////////////////////////add data to send here
   if (!turningOffJoystick) {
     sendVect(movement);
-    sendFl(0);
+    sendFl(turn);
   } else {
     sendFl(turn);
     sendFl(movement.y);
