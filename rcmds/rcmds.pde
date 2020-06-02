@@ -1,5 +1,5 @@
 static final boolean splitAxis=false; //rotate on left, movement on right
-static final boolean turningOffJoystick=false; //put turning on a separate slider instead of the joystick
+static final boolean turningOffJoystick=true; //put turning on a separate slider instead of the joystick
 /////////////////////////add interface elements here
 Joystick movStick;
 Slider turnSlider;
