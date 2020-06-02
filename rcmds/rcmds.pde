@@ -23,19 +23,19 @@ void setup() {
   setupGamepad("Controller (Xbox One For Windows)");
   //setup UI here 
   if (splitAxis) {
-    serALowButton=new Button(width*.68, height*.85, height*.1, color(100, 0, 0), color(255), "arm down button", 'f', true, false, "");
-    serAHighButton=new Button(width*.68, height*.65, height*.1, color(100, 0, 0), color(255), "arm up button", 'r', true, false, "");
-    serBLowButton=new Button(width*.92, height*.85, height*.1, color(0, 0, 100), color(255), "grabber closed button", 'g', true, false, "");
-    serBHighButton=new Button(width*.92, height*.65, height*.1, color(0, 0, 100), color(255), "grabber open button", 't', true, false, "");
+    serALowButton=new Button(width*.68, height*.85, height*.1, color(100, 0, 0), color(255), "Button 0", 'f', true, false, "");
+    serAHighButton=new Button(width*.68, height*.65, height*.1, color(100, 0, 0), color(255), "Button 3", 'r', true, false, "");
+    serBLowButton=new Button(width*.92, height*.85, height*.1, color(0, 0, 100), color(255), "Button 5", 'g', true, false, "");
+    serBHighButton=new Button(width*.92, height*.65, height*.1, color(0, 0, 100), color(255), "Button 2", 't', true, false, "");
     movStick=new Joystick(width*.18, height*.5, width*.3, 1, 1, color(0, 100, 0), color(255), "X Axis", "Y Axis", 'w', 'a', 's', 'd', 0, 0);
     turnSlider=new Slider(width*.8, height*.4, width*.3, height*.1, -1, 1, color(0, 100, 0), color(255), "X Rotation", RIGHT, LEFT, 1, 0, true, false);
     serASlider=new Slider(width*.75, height*.75, height*.45, width*.05, -1, 1, color(100, 0, 0), color(255), null, 0, 0, .03, 0, false, false);
     serBSlider=new Slider(width*.85, height*.75, height*.45, width*.05, -1, 1, color(0, 0, 100), color(255), null, 0, 0, .03, 0, false, false);
   } else {
-    serALowButton=new Button(width*.06, height*.85, height*.1, color(100, 0, 0), color(255), "arm down button", 'f', true, false, "");
-    serAHighButton=new Button(width*.06, height*.65, height*.1, color(100, 0, 0), color(255), "arm up button", 'r', true, false, "");
-    serBLowButton=new Button(width*.26, height*.85, height*.1, color(0, 0, 100), color(255), "grabber closed button", 'g', true, false, "");
-    serBHighButton=new Button(width*.26, height*.65, height*.1, color(0, 0, 100), color(255), "grabber open button", 't', true, false, "");
+    serALowButton=new Button(width*.06, height*.85, height*.1, color(100, 0, 0), color(255), "Button 0", 'f', true, false, "");
+    serAHighButton=new Button(width*.06, height*.65, height*.1, color(100, 0, 0), color(255), "Button 3", 'r', true, false, "");
+    serBLowButton=new Button(width*.26, height*.85, height*.1, color(0, 0, 100), color(255), "Button 5", 'g', true, false, "");
+    serBHighButton=new Button(width*.26, height*.65, height*.1, color(0, 0, 100), color(255), "Button 2", 't', true, false, "");
     movStick=new Joystick(width*.8, height*.5, width*.3, 1, 1, color(0, 100, 0), color(255), "X Axis", "Y Axis", UP, LEFT, DOWN, RIGHT, 0, 0);
     turnSlider=new Slider(width*.18, height*.4, width*.3, height*.1, -1, 1, color(0, 100, 0), color(255), "X Rotation", 'd', 'a', 1, 0, true, false);
     serASlider=new Slider(width*.12, height*.75, height*.45, width*.05, -1, 1, color(100, 0, 0), color(255), null, 0, 0, .03, 0, false, false);
