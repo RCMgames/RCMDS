@@ -3,7 +3,11 @@ void dispTelem(String[] msg, String[] val, int x, int y, int w, int h, int ts) {
   textSize(ts);
   stroke(255);
   strokeWeight(1);
-  fill(10);
+  if (wifiPing==-1) {
+    fill(80, 0, 0);
+  } else {
+    fill(10, 20, 10);
+  }  
   rect(x, y, w, h-1);
   fill(255);
   for (int i=0; i<msg.length; i++) {
