@@ -71,7 +71,7 @@ void WifiDataToSend() {
   ///////////////////////////////////add data to send here
   if (!turningOffJoystick) {
     sendVect(movement);
-    sendFl(0);
+    sendFl(turn);
   } else {
     sendFl(turn);
     sendFl(movement.y);
