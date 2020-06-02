@@ -5,7 +5,8 @@ class Slider {
   float yPos;
   float s;
   float w;
-  float range;
+  float low;
+  float high;
   int pointerID;
   String ga;
   int pKey;
@@ -14,14 +15,15 @@ class Slider {
   boolean horizontal;
   boolean reverse;
   float inc;
-  Slider(float _xPos, float _yPos, float _size, float _width, float _range, color _background, color _stick, String _ga, int _pKey, int _mKey, float _inc, int _tilt, boolean _horizontal, boolean _reverse) {
+  Slider(float _xPos, float _yPos, float _size, float _width, float _low, float _high, color _background, color _stick, String _ga, int _pKey, int _mKey, float _inc, int _tilt, boolean _horizontal, boolean _reverse) {
     xPos=_xPos;
     yPos=_yPos;
     s=_size;
     w=_width;
     background=_background;
     stick=_stick;
-    range=_range;
+    low=_low;
+    high=_high;
     ga=_ga;
     pKey=_pKey;
     mKey=_mKey;
@@ -32,10 +34,10 @@ class Slider {
     pointerID=mousescreen.registerZone(xPos, yPos, boolAB(horizontal, s, w), boolAB(horizontal, w, s));
   }
   float run(float v) {
+    v=map(v, low, high, -1, 1);
     if (reverse) {
       v=-v;
     }
-    v=v/range;
     noStroke();
     fill(background);
     rect(xPos, yPos, boolAB(horizontal, s, w), boolAB(horizontal, w, s));
@@ -46,10 +48,10 @@ class Slider {
     v=constrain(v, -1, 1);
     fill(stick);
     ellipse(xPos+boolAB(horizontal, s/2*v, 0), yPos-boolAB(horizontal, 0, s/2*v), w, w);
-    v=v*range;
     if (reverse) {
       v=-v;
     }
+    v=map(v, -1, 1, low, high);
     return v;
   }
 }
