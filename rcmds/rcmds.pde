@@ -39,7 +39,7 @@ void draw() {
   serA=serASlider.run(serA);
   serB=serBSlider.run(serB);
   if (serALowButton.run()) serA=-1;
-  if (serAHighButton.run()) serA=.85;
+  if (serAHighButton.run()) serA=.75;
   if (serBLowButton.run()) serB=-.8;
   if (serBHighButton.run()) serB=1;
 
