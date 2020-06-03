@@ -1,5 +1,5 @@
-static final boolean splitAxis=false; //rotate on left, movement on right
-static final boolean turningOffJoystick=true; //put turning on a separate slider instead of the joystick
+static final boolean joystickOnRight=false; //rotate on left, movement on right
+static final boolean turnWithSeparateSlider=true; //put turning on a separate slider instead of the joystick
 /////////////////////////add interface elements here
 Joystick movStick;
 Slider turnSlider;
@@ -22,7 +22,7 @@ void setup() {
   rcmdsSetup();
   setupGamepad("Controller (Xbox One For Windows)");
   //setup UI here 
-  if (splitAxis) {
+  if (joystickOnRight) {
     serALowButton=new Button(width*.68, height*.85, height*.1, color(100, 0, 0), color(255), "Button 0", 'f', true, false, "");
     serAHighButton=new Button(width*.68, height*.65, height*.1, color(100, 0, 0), color(255), "Button 3", 'r', true, false, "");
     serBLowButton=new Button(width*.92, height*.85, height*.1, color(0, 0, 100), color(255), "Button 5", 'g', true, false, "");
@@ -69,7 +69,7 @@ void WifiDataToRecv() {
 void WifiDataToSend() {
   sendBl(enabled);
   ///////////////////////////////////add data to send here
-  if (!turningOffJoystick) {
+  if (!turnWithSeparateSlider) {
     sendVect(movement);
     sendFl(turn);
   } else {
