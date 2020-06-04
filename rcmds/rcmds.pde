@@ -1,4 +1,5 @@
 static final boolean turningOffJoystick=true; //put turning on a separate slider instead of the joystick
+static final boolean joystickOnRight=true;
 /////////////////////////add interface elements here
 Joystick movStick;
 Slider turnSlider;
@@ -20,14 +21,25 @@ void setup() {
   fullScreen();
   rcmdsSetup();
   //setup UI here 
-  serALowButton=new Button(width*.06, height*.85, height*.1, color(100, 0, 0), color(255), null, 0, true, false, "");
-  serAHighButton=new Button(width*.06, height*.65, height*.1, color(100, 0, 0), color(255), null, 0, true, false, "");
-  serBLowButton=new Button(width*.26, height*.85, height*.1, color(0, 0, 100), color(255), null, 0, true, false, "");
-  serBHighButton=new Button(width*.26, height*.65, height*.1, color(0, 0, 100), color(255), null, 0, true, false, "");
-  movStick=new Joystick(width*.8, height*.5, width*.3, 1, 1, color(0, 100, 0), color(255), null, null, 0, 0, 0, 0, 0, 0);
-  turnSlider=new Slider(width*.18, height*.4, width*.3, height*.1, -1, 1, color(0, 100, 0), color(255), null, 0, 0, 1, 0, true, false);
-  serASlider=new Slider(width*.12, height*.75, height*.45, width*.05, -1, 1, color(100, 0, 0), color(255), null, 0, 0, .03, 0, false, false);
-  serBSlider=new Slider(width*.2, height*.75, height*.45, width*.05, -1, 1, color(0, 0, 100), color(255), null, 0, 0, .03, 0, false, false);
+  if(joystickOnRight){
+    serALowButton=new Button(width*.06, height*.85, height*.1, color(100, 0, 0), color(255), null, 0, true, false, "");
+    serAHighButton=new Button(width*.06, height*.65, height*.1, color(100, 0, 0), color(255), null, 0, true, false, "");
+    serBLowButton=new Button(width*.26, height*.85, height*.1, color(0, 0, 100), color(255), null, 0, true, false, "");
+    serBHighButton=new Button(width*.26, height*.65, height*.1, color(0, 0, 100), color(255), null, 0, true, false, "");
+    movStick=new Joystick(width*.8, height*.5, width*.3, 1, 1, color(0, 100, 0), color(255), null, null, 0, 0, 0, 0, 0, 0);
+    turnSlider=new Slider(width*.18, height*.4, width*.3, height*.1, -1, 1, color(0, 100, 0), color(255), null, 0, 0, 1, 0, true, false);
+    serASlider=new Slider(width*.12, height*.75, height*.45, width*.05, -1, 1, color(100, 0, 0), color(255), null, 0, 0, .03, 0, false, false);
+    serBSlider=new Slider(width*.2, height*.75, height*.45, width*.05, -1, 1, color(0, 0, 100), color(255), null, 0, 0, .03, 0, false, false);
+  } else {
+    serALowButton=new Button(width*.06, height*.85, height*.1, color(100, 0, 0), color(255), null, 0, true, false, "");
+    serAHighButton=new Button(width*.06, height*.65, height*.1, color(100, 0, 0), color(255), null, 0, true, false, "");
+    serBLowButton=new Button(width*.26, height*.85, height*.1, color(0, 0, 100), color(255), null, 0, true, false, "");
+    serBHighButton=new Button(width*.26, height*.65, height*.1, color(0, 0, 100), color(255), null, 0, true, false, "");
+    movStick=new Joystick(width*.8, height*.5, width*.3, 1, 1, color(0, 100, 0), color(255), null, null, 0, 0, 0, 0, 0, 0);
+    turnSlider=new Slider(width*.18, height*.4, width*.3, height*.1, -1, 1, color(0, 100, 0), color(255), null, 0, 0, 1, 0, true, false);
+    serASlider=new Slider(width*.12, height*.75, height*.45, width*.05, -1, 1, color(100, 0, 0), color(255), null, 0, 0, .03, 0, false, false);
+    serBSlider=new Slider(width*.2, height*.75, height*.45, width*.05, -1, 1, color(0, 0, 100), color(255), null, 0, 0, .03, 0, false, false);
+  }
 }
 void draw() {
   background(0);
