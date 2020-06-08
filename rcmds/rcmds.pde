@@ -53,7 +53,7 @@ void draw() {
   if (serALowButton.run()) serA=-1;
   if (serAHighButton.run()) serA=.75;
   if (serBLowButton.run()) serB=-.8;
-  if (serBHighButton.run()) serB=1;
+  if (serBHighButton.run()) serB=.55;
 
   String[] msg={"battery voltage", "ping"};
   String[] data={str(batVolt), str(wifiPing)};
