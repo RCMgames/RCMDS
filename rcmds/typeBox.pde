@@ -1,4 +1,3 @@
-import ketai.ui.*;
 boolean typeBoxActive=false;
 class TypeBox {
   float x;
