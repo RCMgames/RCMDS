@@ -15,12 +15,12 @@ class Mousescreen {
   }
   boolean readPressed(int id) {
     MouseZone zone=zones.get(id);
+    if (!mousePressed) {
+      zone.touched=false;
+    }
     if (abs(mouseX-zone.x)<zone.w/2&&abs(mouseY-zone.y)<zone.h/2&&mousePress) {
       mousePress=false;
       zone.touched=true;
-    }
-    if (!mousePressed) {
-      zone.touched=false;
     }
     zones.set(id, zone);
     return zone.touched;
