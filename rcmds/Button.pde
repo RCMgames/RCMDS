@@ -5,7 +5,6 @@ class Button {
   float yPos;
   float size;
   int touchID;
-  int mouseID;
   String gpButton;
   boolean momentary;
   boolean lastVal;

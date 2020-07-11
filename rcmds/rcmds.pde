@@ -13,7 +13,7 @@ void setup() {
 void draw() {
   background(0);
   runWifiSettingsChanger();
-  enabled=runEnableSwitch(enabled);
+  enabled=enableSwitch.run(enabled);
   /////////////////////////////////////add UI here
 
   String[] msg={"battery voltage", "ping"};
@@ -21,6 +21,7 @@ void draw() {
   dispTelem(msg, data, width/2, height*2/3, width/4, height*2/3, 20);
 
   sendWifiData(true);
+  endOfDraw();
 }
 void WifiDataToRecv() {
   batVolt=recvFl();

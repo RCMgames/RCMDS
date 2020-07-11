@@ -31,6 +31,9 @@ class TypeBox {
       e=true;
       typeBoxActive=true;
     }
+    if (touchscreen.readPressed(touchID)&&e==true) {
+      KetaiKeyboard.show(rcmds.this);
+    }
     if (keyPressTypeBox&&e) {
       if (key==ENTER||key==RETURN||keyCode==66) {
         e=false;
