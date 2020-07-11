@@ -13,6 +13,3 @@ void rcmdsSetup() {
   udp.listen(true);
   enableSwitch=new EnableSwitch(width*.15, height/15, width/4, height/9);
 }
-boolean runEnableSwitch(boolean en) {
-  return enableSwitch.run(en);
-}

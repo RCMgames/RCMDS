@@ -19,7 +19,6 @@ class Mousescreen {
       zone.touched=false;
     }
     if (abs(mouseX-zone.x)<zone.w/2&&abs(mouseY-zone.y)<zone.h/2&&mousePress) {
-      mousePress=false;
       zone.touched=true;
     }
     zones.set(id, zone);
@@ -29,7 +28,6 @@ class Mousescreen {
   PVector readPos(int id, PVector v) {
     MouseZone zone=zones.get(id);
     if (abs(mouseX-zone.x)<zone.w/2&&abs(mouseY-zone.y)<zone.h/2&&mousePress) {
-      mousePress=false;
       zone.touched=true;
     }
     if (!mousePressed) {
