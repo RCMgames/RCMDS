@@ -21,7 +21,7 @@ void draw() {
   dispTelem(msg, data, width/2, height*2/3, width/4, height*2/3, 20);
 
   sendWifiData(true);
-  mousePress=false;
+  endOfDraw();
 }
 void WifiDataToRecv() {
   batVolt=recvFl();
