@@ -1,5 +1,5 @@
 # RCMDS
-Control App for [RCM](https://github.com/mpyoutube/rcm)
+Control App for [RCM](https://github.com/rcmgames/rcm)
 
 Made with [Processing!](https://www.processing.org/reference)
 
