@@ -20,7 +20,7 @@ class EnableSwitch {
     swipePos=constrain(swipePos, -1, 1);
     if (enabled) {
       boolean pressed=mousescreen.readPressed(pointerID);
-      if (pressed&&!locked||keyboardCtrl.isPressed(ENTER)) {
+      if ((pressed&&!locked)||(keyboardCtrl.isPressed(ENTER)||keyboardCtrl.isPressed(RETURN))) {
         enabled=false;
         locked=true;
       }
